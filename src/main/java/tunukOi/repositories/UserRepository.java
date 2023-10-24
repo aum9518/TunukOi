@@ -1,7 +1,8 @@
-package kuttengri.repositories;
+package tunukOi.repositories;
 
-import kuttengri.entities.User;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import tunukOi.entities.User;
 
 import java.util.Optional;
 

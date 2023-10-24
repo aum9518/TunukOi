@@ -1,11 +1,11 @@
-package kuttengri.exceptions.handler;
+package tunukOi.exceptions.handler;
 
-import kuttengri.exceptions.ExceptionResponse;
-import kuttengri.exceptions.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import tunukOi.exceptions.ExceptionResponse;
+import tunukOi.exceptions.NotFoundException;
 
 @RestControllerAdvice
 public class GlobalException {

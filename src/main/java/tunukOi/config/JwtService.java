@@ -1,4 +1,4 @@
-package kuttengri.config;
+package tunukOi.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;

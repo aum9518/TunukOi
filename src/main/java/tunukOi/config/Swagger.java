@@ -1,4 +1,4 @@
-package kuttengri.config;
+package tunukOi.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -19,7 +19,7 @@ public class Swagger {
         return new OpenAPI()
                 .components(new Components()
                         .addSecuritySchemes(API_KEY, apiKeySecuritySchema()))
-                .info(new Info().title("Kut-Tengri"))
+                .info(new Info().title("Tunuk-Oi"))
                 .security(Collections.singletonList(new SecurityRequirement().addList(API_KEY)));
     }
 

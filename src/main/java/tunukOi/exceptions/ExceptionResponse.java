@@ -1,4 +1,4 @@
-package kuttengri.exceptions;
+package tunukOi.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

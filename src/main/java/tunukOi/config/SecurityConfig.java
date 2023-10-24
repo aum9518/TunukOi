@@ -1,4 +1,4 @@
-package kuttengri.config;
+package tunukOi.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
