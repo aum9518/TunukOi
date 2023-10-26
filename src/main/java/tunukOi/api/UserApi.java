@@ -19,10 +19,4 @@ import tunukOi.service.UserService;
 public class UserApi {
     private final UserService userService;
 
-    @PutMapping
-    @PreAuthorize("hasAuthority('USER')")
-    @Operation(summary = "Update user information", description = "Updates the user information based on the provided request.")
-    public SimpleResponse updateUser(@RequestBody @Valid SimpleResponse userUpdateRequest) {
-        return userService.userUpdate(userUpdateRequest);
-    }
 }

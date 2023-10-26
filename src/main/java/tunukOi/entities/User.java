@@ -1,6 +1,7 @@
 package tunukOi.entities;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,15 +25,29 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_gen")
     @SequenceGenerator(sequenceName = "user_seq",name = "user_gen",allocationSize = 1)
     private Long id;
-    private String name;
+    private String NickName;
     private String email;
     private String password;
-    private String phoneNumber;
     private LocalDate dateOfBirth;
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
     @Enumerated(value = EnumType.STRING)
     private Role role;
+    @OneToMany(mappedBy = "user",cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.REMOVE})
+    private List<GameField> gameFields;
+    @OneToMany(mappedBy = "user",cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.REMOVE})
+    private List<Card> cards;
+
+    @Builder
+    public User(Long id, String nickName, String email, String password, LocalDate dateOfBirth, Gender gender, Role role) {
+        this.id = id;
+        NickName = nickName;
+        this.email = email;
+        this.password = password;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.role = role;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
