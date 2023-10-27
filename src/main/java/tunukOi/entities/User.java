@@ -37,6 +37,8 @@ public class User implements UserDetails {
     private List<GameField> gameFields;
     @OneToMany(mappedBy = "user",cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.REMOVE})
     private List<Card> cards;
+    @OneToMany(mappedBy = "user",cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.REMOVE})
+    private  List<Chat> chats;
 
     @Builder
     public User(Long id, String nickName, String email, String password, LocalDate dateOfBirth, Gender gender, Role role) {
