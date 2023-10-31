@@ -21,4 +21,6 @@ public class Chat {
     private DateTime messageTime;
     @ManyToOne
     private User user;
+    @ManyToOne
+    private GameField gameField;
 }

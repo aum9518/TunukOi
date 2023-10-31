@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "game_fields")
 @Getter
@@ -17,5 +19,7 @@ public class GameField {
     private Long id;
     @ManyToOne
     private User user;
+    @OneToMany(mappedBy = "gameField",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+    private List<Chat> chats;
 
 }

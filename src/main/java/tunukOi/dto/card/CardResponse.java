@@ -8,9 +8,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Builder
 public class CardResponse {
+
     private Long id;
     private String text;
     private String image;
+
+    @Builder
+    public CardResponse(Long id, String text, String image) {
+        this.id = id;
+        this.text = text;
+        this.image = image;
+    }
 }
