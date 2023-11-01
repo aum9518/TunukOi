@@ -18,6 +18,8 @@ import tunukOi.exceptions.NotFoundException;
 import tunukOi.repositories.UserRepository;
 import tunukOi.service.AuthenticationService;
 
+import java.util.ArrayList;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -49,6 +51,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .email(signUpRequest.getEmail())
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
                 .role(Role.USER)
+                .dateOfBirth(signUpRequest.getDateOfBirth())
+                .gender(signUpRequest.getGender())
                 .build();
         log.info("User successfully saved");
         userRepository.save(user);
@@ -95,6 +99,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                     .password(passwordEncoder.encode(PASSWORD))
                     .role(Role.ADMIN)
                     .build();
+            user.setCards(new ArrayList<>());
+            user.setChats(new ArrayList<>());
+            user.setGameFields(new ArrayList<>());
             userRepository.save(user);
             log.info("Admin saved");
         }
